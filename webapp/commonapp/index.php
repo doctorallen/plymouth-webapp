@@ -1,3 +1,3 @@
 <?php
 
-CAController::delegate();
+\CAController::delegate();

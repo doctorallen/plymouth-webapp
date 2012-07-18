@@ -1,5 +1,6 @@
 <?php
 
+require dirname( dirname( __DIR__ ) ) . '/legacy/git-bootstrap.php';
 /**
  * Common Application administration. An interfacing for loading data into Common App, and
  * viewing reports of related information.
@@ -7,7 +8,6 @@
 
 require_once 'autoload.php';
 PSU::session_start();
-
 /*******************[Site Constants]*****************/
 $GLOBALS['BASE_DIR'] = dirname(__FILE__);
 
@@ -16,9 +16,9 @@ PSU::get()->base_url = $GLOBALS['BASE_URL'] = $GLOBALS['HTTP_HOST'] . '/webapp/c
 
 // Common Includes
 $GLOBALS['COMMON_INCLUDES']='/web/pscpages/includes';
-
+require_once $GLOBALS['BASE_DIR'] . '/includes/CAController.class.php';
+require_once $GLOBALS['BASE_DIR'] . '/includes/CommonAppCountries.class.php';
 $GLOBALS['LOCAL_INCLUDES'] = $GLOBALS['BASE_DIR'].'/includes';
-
 $GLOBALS['TEMPLATES']=$GLOBALS['BASE_DIR'].'/templates';
 
 // Javascript
